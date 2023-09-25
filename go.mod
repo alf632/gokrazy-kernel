@@ -1,3 +1,3 @@
-module github.com/gokrazy/kernel
+module github.com/alf632/gokrazy-kernel
 
 go 1.14
