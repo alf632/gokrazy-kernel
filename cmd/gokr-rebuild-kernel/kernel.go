@@ -140,7 +140,7 @@ func main() {
 
 	buildPath := filepath.Join(tmp, "gokr-build-kernel")
 
-	cmd := exec.Command("go", "build", "-o", buildPath, "github.com/gokrazy/kernel/cmd/gokr-build-kernel")
+	cmd := exec.Command("go", "build", "-o", buildPath, "github.com/alf632/gokrazy-kernel/cmd/gokr-build-kernel")
 	cmd.Env = append(os.Environ(), "GOOS=linux", "CGO_ENABLED=0")
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {

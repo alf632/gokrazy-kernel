@@ -17,6 +17,10 @@ import (
 var latest = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.5.4.tar.xz"
 
 const configAddendum = `
+CONFIG_MT76_CORE=y
+CONFIG_MT76x0U=y
+CONFIG_WLAN=y
+CONFIG_WLAN_VENDOR_MEDIATEK=y
 CONFIG_ARCH_BCM2835=y 
 CONFIG_HW_RANDOM_BCM2835=y
 CONFIG_DMA_BCM2835=y
