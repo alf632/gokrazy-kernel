@@ -14,13 +14,14 @@ import (
 )
 
 // see https://www.kernel.org/releases.json
-var latest = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.5.4.tar.xz"
+var latest = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.5.7.tar.xz"
 
 const configAddendum = `
-CONFIG_MT76_CORE=y
-CONFIG_MT76x0U=y
 CONFIG_WLAN=y
 CONFIG_WLAN_VENDOR_MEDIATEK=y
+CONFIG_MT76_CORE=y
+CONFIG_MAC80211=y
+CONFIG_MT76x0U=y
 CONFIG_ARCH_BCM2835=y 
 CONFIG_HW_RANDOM_BCM2835=y
 CONFIG_DMA_BCM2835=y
@@ -1136,7 +1137,6 @@ func compile() error {
 	if err := olddefconfig.Run(); err != nil {
 		return fmt.Errorf("make olddefconfig: %v", err)
 	}
-
 	env := append(os.Environ(),
 		"ARCH=arm64",
 		"CROSS_COMPILE=aarch64-linux-gnu-",
